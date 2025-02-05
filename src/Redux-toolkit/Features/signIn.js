@@ -14,7 +14,11 @@ export const sign_in = createAsyncThunk(
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data)
+        alert(data.message);
+        // if(data.success == false){
+        //   alert(data.message)
+        // }
         return data;
       })
       .catch((err) => {
@@ -23,7 +27,6 @@ export const sign_in = createAsyncThunk(
       });
   }
 );
-
 const signIn = createSlice({
   name: "signIn",
   initialState: {
@@ -32,20 +35,26 @@ const signIn = createSlice({
     loading: false,
   },
   extraReducers: {
-    [sign_in.pending]: (state, action) => {
+    [sign_in.pending]: (state) => {
       state.auth = false;
       state.loading = true;
     },
     [sign_in.fulfilled]: (state, action) => {
-      state.user_id = action.payload.user._id;
-      state.auth = action.payload.success;
+      if (action.payload && action.payload.user) {
+        state.user_id = action.payload.user._id;
+        state.auth = action.payload.success;
+      } else {
+        state.user_id = "";
+        state.auth = false;
+      }
       state.loading = false;
     },
-    [sign_in.rejected]: (state, action) => {
+    [sign_in.rejected]: (state) => {
       state.auth = false;
       state.loading = false;
     },
   },
 });
+
 
 export default signIn.reducer;
