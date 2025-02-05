@@ -6,7 +6,7 @@ import InventoryOutlinedIcon from "@mui/icons-material/InventoryOutlined";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import StorefrontOutlinedIcon from "@mui/icons-material/StorefrontOutlined";
 import ListAltOutlinedIcon from "@mui/icons-material/ListAltOutlined";
-import { Link, Navigate } from "react-router-dom";
+import { Link,useNavigate} from "react-router-dom";
 
 import { useDispatch, useSelector } from "react-redux";
 
@@ -14,22 +14,30 @@ import "./css/profileSidebar.css";
 
 const ProfileSidebar = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   function signOut() {
     fetch("https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/sign/out", {
       credentials: "include",
     })
-      .then((res) => res.json)
+      .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        console.log(data);  // Check for success message here
+        console.log("logging out");
+  
+        // Clear Redux auth state
         dispatch({
           type: "is_Auth",
           payload: false,
         });
-        <Navigate to={"/signIn"} />;
-        alert("Your Signed Out");
+  
+  
+        // Redirect to sign-in page
+        navigate('/signin');
+        alert("You have been signed out successfully.");
       })
       .catch((err) => console.log(err));
   }
+  
 
   // useEffect(() => {
   //   dispatch(user_info());
