@@ -12,7 +12,7 @@ export default function Store() {
 
   // useEffect(() => {
   //   setLoading(true);
-  //   fetch("http://localhost:8080/api/v1/get/all/product", {
+  //   fetch("https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/get/all/product", {
   //     credentials: "include",
   //   })
   //     .then((res) => res.json())

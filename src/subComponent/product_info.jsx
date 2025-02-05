@@ -12,7 +12,7 @@ export const ProductInfo = ({ data, id }) => {
 
   let rating = data.Rating;
   function add_toCart() {
-    fetch(`http://localhost:8080/api/v1/get/product/cart/${id}`, {
+    fetch(`https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/get/product/cart/${id}`, {
       credentials: "include",
     })
       .then((res) => res.json())

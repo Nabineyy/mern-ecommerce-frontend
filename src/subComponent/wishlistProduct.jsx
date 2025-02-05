@@ -10,7 +10,7 @@ const WishlistProduct = ({ data, icon }) => {
   const { name, img, brand, disPrice } = data;
   const dispatch = useDispatch();
   function add_toCart() {
-    fetch(`http://localhost:8080/api/v1/get/product/cart/${data._id}`, {
+    fetch(`https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/get/product/cart/${data._id}`, {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -21,7 +21,7 @@ const WishlistProduct = ({ data, icon }) => {
       .catch((err) => console.log(err));
   }
   function add_toWishlist() {
-    fetch(`http://localhost:8080/api/v1/get/product/wishlist/${data._id}`, {
+    fetch(`https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/get/product/wishlist/${data._id}`, {
       credentials: "include",
     })
       .then((res) => res.json())

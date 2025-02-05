@@ -17,7 +17,7 @@ export default function Product({ data }) {
   // let  = data.;
 
   function add_toCart() {
-    fetch(`http://localhost:8080/api/v1/get/product/cart/${id}`, {
+    fetch(`https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/get/product/cart/${id}`, {
       credentials: "include",
     })
       .then((res) => res.json())
@@ -28,7 +28,7 @@ export default function Product({ data }) {
       .catch((err) => console.log(err));
   }
   function add_toWishlist() {
-    fetch(`http://localhost:8080/api/v1/get/product/wishlist/${id}`, {
+    fetch(`https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/get/product/wishlist/${id}`, {
       credentials: "include",
     })
       .then((res) => res.json())

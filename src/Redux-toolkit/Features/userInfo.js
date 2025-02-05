@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
 export const user_info = createAsyncThunk("/user/info", async () => {
-  return fetch("http://localhost:8080/api/v1/user/info", {
+  return fetch("https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/user/info", {
     credentials: "include",
   })
     .then((res) => res.json())

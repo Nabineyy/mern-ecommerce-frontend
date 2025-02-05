@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const fetch_allProduct = createAsyncThunk(
   "/fetch/all/product",
   async () => {
-    return fetch("http://localhost:8080/api/v1/get/all/product", {
+    return fetch("https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/get/all/product", {
       credentials: "include",
     })
       .then((res) => res.json())

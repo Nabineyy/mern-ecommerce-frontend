@@ -15,7 +15,7 @@ import "./css/profileSidebar.css";
 const ProfileSidebar = () => {
   const dispatch = useDispatch();
   function signOut() {
-    fetch("http://localhost:8080/api/v1/sign/out", {
+    fetch("https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/sign/out", {
       credentials: "include",
     })
       .then((res) => res.json)

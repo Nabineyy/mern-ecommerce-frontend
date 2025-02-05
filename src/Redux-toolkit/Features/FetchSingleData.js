@@ -1,8 +1,8 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-//http://localhost:8080/api/v1/product/63bd86ec49ee7184ef607d3d
+//https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/product/63bd86ec49ee7184ef607d3d
 export const fetch_product = createAsyncThunk("/fetch/product", async (id) => {
-  return fetch(`http://localhost:8080/api/v1/product/${id}`, {
+  return fetch(`https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/product/${id}`, {
     credentials: "include",
   })
     .then((res) => res.json())

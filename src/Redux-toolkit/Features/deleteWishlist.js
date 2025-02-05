@@ -4,7 +4,7 @@ export const delete_wishlist = createAsyncThunk(
   "/delete/wishlist",
   async (id) => {
     return fetch(
-      `http://localhost:8080/api/v1/get/product/delete/wishlist/${id}`,
+      `https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/get/product/delete/wishlist/${id}`,
       {
         credentials: "include",
       }

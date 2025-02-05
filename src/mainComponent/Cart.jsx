@@ -6,7 +6,7 @@ import "./css/Store.css";
 export const Cart = () => {
   const [cart, setCart] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:8080/api/v1/get/product/cart", {
+    fetch("https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/get/product/cart", {
       credentials: "include",
     })
       .then((res) => res.json())

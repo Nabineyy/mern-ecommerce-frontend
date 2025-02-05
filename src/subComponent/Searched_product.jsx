@@ -11,7 +11,7 @@ export default function SearchedProduct() {
   const { id } = useParams();
 
   useEffect(() => {
-    fetch(`http://localhost:8080/api/v1/get/product/search/${id}`, {
+    fetch(`https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/get/product/search/${id}`, {
       credentials: "include",
     })
       .then((res) => res.json())

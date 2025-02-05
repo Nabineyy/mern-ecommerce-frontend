@@ -3,7 +3,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 export const delete_product = createAsyncThunk(
   "/delete/wishlist",
   async (id) => {
-    return fetch(`http://localhost:8080/api/v1/product/${id}`, {
+    return fetch(`https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/product/${id}`, {
       method: "DELETE",
       credentials: "include",
     })
