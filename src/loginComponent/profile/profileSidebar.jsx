@@ -15,6 +15,7 @@ import "./css/profileSidebar.css";
 const ProfileSidebar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
+  const { auth } = useSelector((state) => state.isAuth);
   function signOut() {
     fetch("https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/sign/out", {
       credentials: "include",
@@ -29,8 +30,7 @@ const ProfileSidebar = () => {
           type: "is_Auth",
           payload: false,
         });
-  
-  
+        
         // Redirect to sign-in page
         navigate('/signin');
         alert("You have been signed out successfully.");
