@@ -7,7 +7,11 @@ export const auth = createAsyncThunk("/is/auth", async () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        return data.user._id;
+        // return data.user._id;
+        return {
+          success: data.success,
+          user_id: data.user._id,
+        };
       })
       // .then((data) => console.log(data))
       .catch((err) => console.log(err))
@@ -25,7 +29,8 @@ const AuthId = createSlice({
       state.loading = true;
     },
     [auth.fulfilled]: (state, action) => {
-      state.user_id = action.payload;
+      state.auth = action.payload.success; 
+      state.user_id = action.payload.user_id;
       state.loading = false;
     },
     [auth.rejected]: (state, action) => {

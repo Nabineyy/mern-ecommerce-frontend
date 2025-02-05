@@ -16,12 +16,6 @@ export const sign_in = createAsyncThunk(
       .then((data) => {
         console.log(data);
         return data;
-
-        // alert(data.message);
-
-        // console.log(data.success);
-
-        // window.location.reload(true);
       })
       .catch((err) => {
         console.log(err);

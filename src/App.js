@@ -42,10 +42,9 @@ function App() {
     try {
       setAuth(auth);
 
-      fetch("https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/is/auth", {
+      fetch(`https://mern-ecommerce-backend-vjq6.onrender.com/api/v1/is/auth`, {
         credentials: "include",
-      })
-        .then((res) => res.json())
+      }).then((res) => res.json())
         .then((data) => {
           console.log(`data success : ${data.success}`);
           setAuth(data.success);
